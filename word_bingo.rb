@@ -71,12 +71,13 @@ pdf = Prawn::Document.generate('bingo.pdf', pdf_options) do |pdf|
       table.width = 19.cm
     end
 
-    if index % BOARDS_PER_PAGE == BOARDS_PER_PAGE - 1
-      pdf.start_new_page
-    else
-      pdf.move_down 2.cm
+    if index < boards.length - 1
+      if index % BOARDS_PER_PAGE == BOARDS_PER_PAGE - 1
+        pdf.start_new_page
+      else
+        pdf.move_down 2.cm
+      end
     end
-
   end
 end
 
