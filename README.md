@@ -12,6 +12,8 @@ Installation
 Usage
 =====
 
-`./word_bingo.rb input_files/new_years_eve.danish.wordlist 20`
+```
+./word_bingo.rb input_files/new_years_eve.danish.wordlist 20
+```
 
 Will produce 20 bingo boards with words from the given file.
