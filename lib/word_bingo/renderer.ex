@@ -14,6 +14,10 @@ defmodule WordBingo.Renderer do
       15 = length(board)
 
       [
+        "<html>",
+        "<head>",
+        ~s{<link href="bingo.css" rel="stylesheet"/>},
+        "</head>",
         "<table>",
         board
         |> Enum.chunk_every(5)
@@ -24,7 +28,8 @@ defmodule WordBingo.Renderer do
             "</tr>"
           ]
         end),
-        "</table>"
+        "</table>",
+        "</html>"
       ]
     end)
     |> IO.iodata_to_binary()

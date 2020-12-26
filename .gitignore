@@ -26,4 +26,4 @@ word_bingo-*.tar
 /tmp
 
 # Output file
-/bingo.pdf
+/bingo.html
