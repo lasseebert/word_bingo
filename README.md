@@ -2,15 +2,14 @@
 
 word_bingo is a small script to generate bingo boards with words instead of numbers
 
-## Installation
-
-* Download it
-* `bundle` it
-
 ## Usage
 
+Run this in IEx and generate a HTML file, which can be opened in a browser to either print it or convert to PDF.
+
 ```
-./word_bingo.rb <wordlist file> <number of boards>
+➤ iex -S mix
+iex(1)> WordBingo.from_file("input_files/new_years_eve_2019.danish.wordlist", 35)
+:ok
 ```
 
-Will produce 20 bingo boards with words from the given file.
+This produces the `bingo.html` file in the root of the folder.
