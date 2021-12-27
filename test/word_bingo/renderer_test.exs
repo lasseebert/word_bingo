@@ -12,5 +12,18 @@ defmodule WordBingo.RendererTest do
       assert html =~ "<tr><td>f"
       assert html =~ "<table><tr><td>a"
     end
+
+    test "renders two boards to html" do
+      boards = [
+        List.duplicate("a", 15),
+        List.duplicate("b", 15)
+      ]
+
+      html = Renderer.html(boards)
+
+      assert html =~ "<td>a</td>"
+      assert html =~ "<td>b</td>"
+      assert html =~ "</table><table>"
+    end
   end
 end
