@@ -8,8 +8,8 @@ jobs:
     name: OTP ${{ matrix.otp }} / Elixir ${{ matrix.elixir }}
     strategy:
       matrix:
-        otp: ["23.2.1"]
-        elixir: ["1.11.2"]
+        otp: ["24.2"]
+        elixir: ["1.13.1"]
     env:
       MIX_ENV: test
 
@@ -33,7 +33,7 @@ jobs:
           restore-keys: |
             build-${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}
 
-      - uses: actions/setup-elixir@v1
+      - uses: erlef/setup-beam@v1
         name: Setup elixir
         with:
           otp-version: ${{matrix.otp}}

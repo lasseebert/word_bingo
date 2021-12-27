@@ -8,20 +8,14 @@ defmodule WordBingo.Board do
   @size 15
 
   @doc """
-  Reads a file of one word or phrase per line. Generates a random board from thos words.
-  Empty lines are ignored
+  Reads a file of one word or phrase per line. Generates a random board from those words.
+  Empty lines are ignored.
   """
   @spec from_file(String.t()) :: t
   def from_file(file_name) do
     file_name
     |> File.read!()
     |> String.split("\n", trim: true)
-    |> from_wordlist()
-  end
-
-  defp from_wordlist(words) do
-    words
-    |> Enum.shuffle()
-    |> Enum.take(@size)
+    |> Enum.take_random(@size)
   end
 end

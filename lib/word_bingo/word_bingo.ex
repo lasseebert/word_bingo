@@ -15,6 +15,6 @@ defmodule WordBingo do
     Stream.repeatedly(fn -> Board.from_file(file_name) end)
     |> Enum.take(count)
     |> Renderer.html()
-    |> (&File.write!("bingo.html", &1)).()
+    |> then(&File.write!("bingo.html", &1))
   end
 end
